@@ -1,21 +1,16 @@
-﻿/*!
- * jQuery UI Widget-factory plugin boilerplate (for 1.8/9+)
- * Author: @addyosmani
- * Further changes: @peolanha
- * Licensed under the MIT license
- */
+﻿/*
+*   jquery youtube plugin
+*   jQuery UI Widget-factory plugin (for 1.8/9+)
+*   v0.1
+*/
 
 ; (function ($, window, document, undefined) {
 
-    // define your widget under a namespace of your choice
-    //  with additional parameters e.g.
-    // $.widget( "namespace.widgetname", (optional) - an
-    // existing widget prototype to inherit from, an object
-    // literal to become the widget's prototype );
-
     $.widget("cabana.youtube", {
 
-        //Options to be used as defaults
+        /*
+        *   Options to be used as defaults
+        */
         options: {
             theme: "light",
             autoplay: 0,
@@ -28,18 +23,15 @@
             origin: 'http://' + document.domain
         },
 
+        /*
+        *   prefix all custom events that this widget will fire: "youtube:beforerender"
+        */
         widgetEventPrefix: 'youtube:',
 
-        //Setup widget (eg. element creation, apply theming
-        // , bind events etc.)
+        /*
+        *   Setup widget (eg. element creation, apply theming, bind events etc.)
+        */
         _create: function () {
-
-            // _create will automatically run the first time
-            // this widget is called. Put the initial widget
-            // setup code here, then you can access the element
-            // on which the widget was called via this.element.
-            // The options defined above can be accessed
-            // via this.options this.element.addStuff();
             
             if (typeof this.element.data('id') === "undefined" || typeof this.element.data('id') === undefined) {
                 alert("The element '" + String(this.element.attr('class')) + "' doesn't have an youtube id assigned");
@@ -54,22 +46,22 @@
 
         },
 
-        // Destroy an instantiated plugin and clean up
-        // modifications the widget has made to the DOM
+        /*
+        *   Destroy an instantiated plugin and clean up modifications the widget has made to the DOM
+        */
         _destroy: function () {
-
-            // this.element.removeStuff();
-            // For UI 1.8, destroy must be invoked from the
-            // base widget
-            //$.Widget.prototype.destroy.call(this);
-            // For UI 1.9, define _destroy instead and don't
-            // worry about
-            // calling the base widget
 
             this.element.unbind();
             this.element.remove();
+
         },
 
+        /*
+        *   append ID and params to the url
+        *   trigger before render event
+        *   append the iframe to the this.element
+        *   trigger after render event
+        */
         _render: function () {
             
             this._src = "//www.youtube.com/embed/" + this._id + "?" + $.param(this.options);
@@ -98,8 +90,9 @@
 
         },
 
-        // Respond to any changes the user makes to the
-        // option method
+        /*
+        *   set options
+        */
         _setOption: function (key, value) {
             switch (key) {
                 case "theme":
@@ -114,10 +107,6 @@
                     break;
             }
 
-            // For UI 1.8, _setOption must be manually invoked
-            // from the base widget
-            //$.Widget.prototype._setOption.apply(this, arguments);
-            // For UI 1.9 the _super method can be used instead
             this._super( "_setOption", key, value );
         }
     });

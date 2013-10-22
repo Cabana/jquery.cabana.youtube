@@ -22,5 +22,8 @@ $(document).ready(function(){
 });
 ```
 
+## Data params
+* `id` Youtube video ID, required.
+
 ## Options
 * `theme` Youtube player theme - `["light", "dark"]`

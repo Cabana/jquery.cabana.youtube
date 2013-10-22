@@ -34,3 +34,6 @@ $(document).ready(function(){
 
 ### Compatibility
 IE9+, all modern browsers
+
+### Tips and tricks
+See `examples` folder for extended customization

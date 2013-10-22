@@ -27,3 +27,10 @@ $(document).ready(function(){
 
 ## Options
 * `theme` Youtube player theme - `["light", "dark"]`
+
+## Events
+* `youtube:beforerender` Fired just before Youtube iframe is injected into container. Params passed: `container`, `options`
+* `youtube:afterrender` Fired after Youtube iframe was injected into the container. Params passed: `container`, `options`
+
+### Compatibility
+IE9+, all modern browsers

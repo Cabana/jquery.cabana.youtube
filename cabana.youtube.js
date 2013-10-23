@@ -41,6 +41,7 @@
 
             this._id = this.element.data('id');
             this._container = this.element.wrap('<div class="flex-video"/>');
+            this._elementCached = this.element;
 
             this._render();
 
@@ -52,7 +53,7 @@
         _destroy: function () {
 
             this.element.unbind();
-            this.element.remove();
+            this.element.unwrap().html('');
 
         },
 

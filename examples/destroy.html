@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jquery.cabana.youtube - change option on the fly</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/4.3.2/css/normalize.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/4.3.2/css/foundation.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <script src="../cabana.youtube.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.youtube').youtube({
+                theme: 'light'
+            });
+
+            $('.destroy-player').on('click', function (e) {
+                e.preventDefault();
+                $('.youtube').youtube('destroy');
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+    <div class="row">
+        <div class="large-12 columns">
+
+            <div class="youtube" data-id="fHaL6Qy3b0w"></div>
+
+            <a class="button destroy-player" href="#">Destroy player</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

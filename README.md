@@ -24,9 +24,12 @@ $(document).ready(function(){
 
 ## Data params
 * `id` Youtube video ID, required.
+All data params are also available as player params. More info: https://developers.google.com/youtube/player_parameters#Parameters
+See `examples/data-params.html`. 
+Note: underscores becomes dashes, uppercase becomes lowercase.
 
 ## Options
-* `theme` Youtube player theme - `["light", "dark"]`
+https://developers.google.com/youtube/player_parameters#Parameters
 
 ## Events
 * `youtube:beforerender` Fired just before Youtube iframe is injected into container. Params passed: `container`, `options`

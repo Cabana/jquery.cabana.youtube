@@ -13,7 +13,10 @@
     <script>
         $(document).ready(function () {
 
-            $('.youtube').youtube();
+            $('.youtube').youtube({
+                // this option will be overriden by a `data-` param
+                color: 'black'
+            });
 
         });
     </script>

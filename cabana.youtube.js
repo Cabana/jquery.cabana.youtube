@@ -64,34 +64,26 @@
         *   Apply options set through data params
         */
         _applyDataParams: function() {
-          var params = [
-            'autohide',
-            'autoplay',
-            'cc_load_policy',
-            'color',
-            'controls',
-            'disablekb',
-            'enablejsapi',
-            'fs',
-            'iv_load_policy',
-            'list',
-            'listType',
-            'loop',
-            'modestbranding',
-            'origin',
-            'playerapiid',
-            'playlist',
-            'rel',
-            'showinfo',
-            'theme',
-            'wmode'
-          ];
-
-          for (var i=0; i < params.length; i++) {
-            var param = params[i];
-
-            this._applyDataParam(param, param);
-          };
+            this._applyDataParam('autohide', 'autohide');
+            this._applyDataParam('autoplay', 'autoplay');
+            this._applyDataParam('cc_load_policy', 'cc-load-policy');
+            this._applyDataParam('color', 'color');
+            this._applyDataParam('controls', 'controls');
+            this._applyDataParam('disablekb', 'disablekb');
+            this._applyDataParam('enablejsapi', 'enablejsapi');
+            this._applyDataParam('fs', 'fs');
+            this._applyDataParam('iv_load_policy', 'iv-load-policy');
+            this._applyDataParam('list', 'list');
+            this._applyDataParam('listType', 'listtype');
+            this._applyDataParam('loop', 'loop');
+            this._applyDataParam('modestbranding', 'modestbranding');
+            this._applyDataParam('origin', 'origin');
+            this._applyDataParam('playerapiid', 'playerapiid');
+            this._applyDataParam('playlist', 'playlist');
+            this._applyDataParam('rel', 'rel');
+            this._applyDataParam('showinfo', 'showinfo');
+            this._applyDataParam('theme', 'theme');
+            this._applyDataParam('wmode', 'wmode');
         },
 
         /*

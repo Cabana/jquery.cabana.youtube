@@ -1,7 +1,6 @@
 ﻿/*
 *   jquery youtube plugin
 *   jQuery UI Widget-factory plugin (for 1.8/9+)
-*   v0.1
 */
 
 ; (function ($, window, document, undefined) {
@@ -41,6 +40,11 @@
         *   prefix all custom events that this widget will fire: "youtube:beforerender"
         */
         widgetEventPrefix: 'youtube:',
+
+        /*
+        *   set version
+        */
+        version: '0.2',
 
         /*
         *   Setup widget (eg. element creation, apply theming, bind events etc.)

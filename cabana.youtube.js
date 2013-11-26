@@ -137,7 +137,7 @@
             });
 
             // render some additional markup for the static screenshot and possibly play button
-            if (Boolean(this.options.renderScreenshot)) {
+            if (Boolean(this.options.renderScreenshot) && !Modernizr.touch) {
 
                 this._thumbSrc = (this.options.screenshotSrc == 'youtube') ? "//img.youtube.com/vi/" + this._id + "/0.jpg" : this.options.screenshotSrc;
 

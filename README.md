@@ -6,6 +6,7 @@ jQuery youtube plugin is for rendering youtube player
 * jQuery library
 * jQuery UI Core library
 * Zurb Foundation CSS library
+* Modernizr
 
 ## Usage
 Include `cabana.youtube.js` in your JS (app.js) bundle.
@@ -24,7 +25,7 @@ $(document).ready(function(){
 
 ## Data params
 * `id` - Youtube video ID, required.
-* `render-screenshot` - whether to render a screenshot before displaying iframe (boolean, optional). Default: `false`
+* `render-screenshot` - whether to render a screenshot before displaying iframe (boolean, optional). Default: `false`. Screenshot will not be rendered on touch devices.
 * `screenshot-src` - screenshot image source (string, optional). Default `youtube`. Could also be URL to image   
 * `play-button` - render markup for play button? (boolean, optional). Default `true` if `render-screenshot` is also set to `true`
 

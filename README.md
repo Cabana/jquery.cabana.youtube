@@ -23,9 +23,12 @@ $(document).ready(function(){
 ```
 
 ## Data params
-* `id` Youtube video ID, required.
+* `id` - Youtube video ID, required.
+* `render-screenshot` - whether to render a screenshot before displaying iframe (boolean, optional). Default: `false`
+* `screenshot-src` - screenshot image source (string, optional). Default `youtube`. Could also be URL to image   
+* `play-button` - render markup for play button? (boolean, optional). Default `true` if `render-screenshot` is also set to `true`
 
-All data params are also available as player params. More info: https://developers.google.com/youtube/player_parameters#Parameters
+All other data params are also available as player params. More info: https://developers.google.com/youtube/player_parameters#Parameters
 See `examples/data-params.html`. 
 Note: underscores becomes dashes, uppercase becomes lowercase.
 

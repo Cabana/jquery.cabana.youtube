@@ -32,6 +32,9 @@
             showinfo: 0,
             theme: "dark",
             wmode: 'transparent',
+            renderScreenshot: false,
+            screenshotSrc: 'youtube',
+            playButton: true
         },
 
         /*
@@ -84,6 +87,9 @@
             this._applyDataParam('showinfo', 'showinfo');
             this._applyDataParam('theme', 'theme');
             this._applyDataParam('wmode', 'wmode');
+            this._applyDataParam('renderScreenshot', 'render-screenshot');
+            this._applyDataParam('screenshotSrc', 'screenshot-src');
+            this._applyDataParam('playButton', 'play-button');
         },
 
         /*
@@ -120,7 +126,7 @@
                 options: this.options
             });
 
-            var _iframeHtml = $('<iframe />', {
+            var _$iframeHtml = $('<iframe />', {
                 frameborder: "0",
                 border: "0",
                 scrolling: "no",
@@ -130,7 +136,31 @@
                 src: this._src,
             });
 
-            this.element.html(_iframeHtml);
+            // render some additional markup for the static screenshot and possibly play button
+            if (Boolean(this.options.renderScreenshot)) {
+
+                this._thumbSrc = (this.options.screenshotSrc == 'youtube') ? "//img.youtube.com/vi/" + this._id + "/0.jpg" : this.options.screenshotSrc;
+
+                var _imageStyles = { 'position': 'absolute', 'top': '0', 'left': '0', 'width': '100%', 'height': '100%' };
+                var _$imageHtml = $('<img/>', {
+                    src: this._thumbSrc
+                }).css(_imageStyles);
+
+                if (Boolean(this.options.playButton)) {
+                    var _playButtonStyles = { 'position': 'absolute', 'top': '50%', 'left': '50%' };
+                    var _$playButtonHtml = $('<div/>').addClass(this.element.attr('class') + '-play-button').css(_playButtonStyles);
+                }
+
+                this.element.html([_$imageHtml, _$playButtonHtml]).on('click', function () {
+                    $(this).off();
+                    $(this).html(_$iframeHtml);
+                });
+
+            } else {
+                // no screenshot set. render iframe
+                this.element.html(_$iframeHtml);
+
+            }            
 
             this._trigger("afterrender", null, {
                 container: this._container,

@@ -10,6 +10,20 @@
 
     <script src="../cabana.youtube.js"></script>
 
+    <style>
+        
+        /* if you choose to render screenshot, play button will be rendered automatically. you can choose not to render it by adding data-play-button="false" */
+        .youtube-play-button {
+            width: 0; 
+	        height: 0; 
+	        border-top: 40px solid transparent;
+	        border-bottom: 40px solid transparent;
+	        border-left: 60px solid white;
+            margin:-30px 0 0 -20px;
+        }
+
+    </style>
+
     <script>
         $(document).ready(function () {
 
@@ -26,7 +40,7 @@
     <div class="row">
         <div class="large-12 columns">
 
-            <div class="youtube" data-id="fHaL6Qy3b0w" data-autoplay="1" data-color="white" data-fs="0" data-controls="2" data-autohide="0"></div>
+            <div class="youtube" data-id="fHaL6Qy3b0w" data-autoplay="1" data-color="white" data-render-screenshot="true" data-screenshot-src="youtube"></div>
 
         </div>
     </div>
